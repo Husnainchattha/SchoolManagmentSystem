@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "845691208137",
+    "firebase_url": "https://auth-5beb5.firebaseio.com",
+    "project_id": "auth-5beb5",
+    "storage_bucket": "auth-5beb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845691208137:android:080388a3f0850f52",
+        "android_client_info": {
+          "package_name": "com.example.hussnain.authinticationfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845691208137-3hue7v7jolmlnhhd67hrfgfv0tlgrmge.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hussnain.authinticationfirebase",
+            "certificate_hash": "28f974a3e9de3a5103a7c8a2215037f50df3b95e"
+          }
+        },
+        {
+          "client_id": "845691208137-nhbvjt205d80g0sid62rfd42d9euilrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV0wvhf6Q5508cWPigIJNsAjDOoclDkzQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845691208137-nhbvjt205d80g0sid62rfd42d9euilrj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
