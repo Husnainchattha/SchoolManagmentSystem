@@ -1,4 +1,4 @@
-package com.example.hussnain.authinticationfirebase;
+package attendance;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hussnain.authinticationfirebase.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,7 +30,7 @@ public class AttendanceSheetActivity extends AppCompatActivity {
     public DatePicker datePicker;
 
     private TextView mDateDisplay;
-    private Button mPickDate, upload;
+    private Button  upload;
     private int mYear;
     private int mMonth;
     private int mDay;

@@ -16,31 +16,33 @@ import android.widget.Toast;
 import com.example.hussnain.authinticationfirebase.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import attendance.AttendanceSheetActivity;
 import loginactivities.MainActivity;
 public class SendLeaveRequest extends AppCompatActivity  {
     private Button sendnotificationbtn;
     private EditText notificationMessage;
-    String u_email,u_message;
-    FirebaseFirestore mfireStore;
+    String uemail,umessage;
+    FirebaseDatabase mfireStore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_leave_request);
         notificationMessage=findViewById(R.id.send_message);
-       u_email=getIntent().getStringExtra("key");
-       mfireStore=FirebaseFirestore.getInstance();
+       uemail=getIntent().getStringExtra("key");
+       mfireStore=FirebaseDatabase.getInstance();
        sendnotificationbtn=(Button) findViewById(R.id.button);
 
     sendnotificationbtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            u_message=notificationMessage.getText().toString();
+            umessage=notificationMessage.getText().toString();
 
             if (TextUtils.isEmpty(notificationMessage.getText().toString())){
                 Toast.makeText(SendLeaveRequest.this,"Please enter any message",Toast.LENGTH_SHORT).show();
@@ -56,21 +58,17 @@ public class SendLeaveRequest extends AppCompatActivity  {
     }
     private void addNotification() {
         final Map<String,Object> notificationmessage=new HashMap<>();
-        notificationmessage.put("From",u_email);
-        notificationmessage.put("Message",u_message);
-        mfireStore.collection("Users"+u_email).add(notificationmessage).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        notificationmessage.put("From",uemail);
+        notificationmessage.put("Message",umessage);
+        mfireStore.getReference().child("notification")
+                .child(uemail.replace("@","").replace(".","")).child(String.valueOf(System.currentTimeMillis()))
+                .setValue(notificationmessage).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(SendLeaveRequest.this,"Send Successfully...",Toast.LENGTH_SHORT).show();
-                notificationMessage.setText("");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SendLeaveRequest.this,"Error"+e.getMessage(),Toast.LENGTH_SHORT).show();
-
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(SendLeaveRequest.this,"Send notification successfully",Toast.LENGTH_LONG).show();
             }
         });
+
 
 }
 }

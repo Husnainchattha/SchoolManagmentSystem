@@ -172,8 +172,7 @@ public class LoginActivity extends AppCompatActivity {
 
    public void getAllUserData() {
        DatabaseReference reference = mDatabase;
-
-       reference.addValueEventListener(new ValueEventListener() {
+       reference.addListenerForSingleValueEvent(new ValueEventListener() {
            @Override
            public void onDataChange(DataSnapshot dataSnapshot) {
 

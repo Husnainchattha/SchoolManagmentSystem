@@ -1,4 +1,4 @@
-package com.example.hussnain.authinticationfirebase;
+package attendance;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.hussnain.authinticationfirebase.R;
 
 import java.util.List;
 
@@ -16,9 +18,6 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.Vi
 
     private Context context;
     private List<Admin> uploads;
-
-
-
 
     public AttendanceAdapter(Context context, List<Admin> uploads) {
         this.uploads = uploads;
