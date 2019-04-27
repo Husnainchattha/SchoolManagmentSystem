@@ -1,8 +1,8 @@
 package notifications;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hussnain.authinticationfirebase.R;
 import com.google.firebase.database.FirebaseDatabase;

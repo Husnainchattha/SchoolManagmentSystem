@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="notifications.Notifications"></activity>
+        <activity android:name="notifications.Notifications">
+
+        </activity>
 
         <service android:name=".MyFirebaseInstanceIDService">
             <intent-filter>
@@ -58,7 +60,9 @@
             android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="studentpackage.SendLeaveRequest"
-            android:configChanges="keyboardHidden|orientation|screenSize"></activity>
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
         <activity android:name="loginactivities.ResetPasswordActivity" />
     </application>
 

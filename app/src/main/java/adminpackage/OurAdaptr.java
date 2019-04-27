@@ -1,19 +1,18 @@
 package adminpackage;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.hussnain.authinticationfirebase.R;
 
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import model.Admin;
 import model.User;
 
 public class OurAdaptr extends RecyclerView.Adapter<OurAdaptr.ViewHolder> {
